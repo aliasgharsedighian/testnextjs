@@ -13,8 +13,25 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/store/store.js",
+    "app/GlobalRedux/store.js",
+    "app/GlobalRedux/Features/user/userSlice.js",
+    "app/GlobalRedux/Features/basket/basketSlice.js",
+    "app/GlobalRedux/provider.jsx",
+    "app/products/loading.js",
+    "app/user-list/page.js"
+  ],
   "exclude": ["node_modules"]
 }
