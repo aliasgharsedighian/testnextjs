@@ -2,6 +2,7 @@
   position: sticky;
   z-index: 50;
   top: 0;
+  
 }
 .navbar {
   background-color: #fffcf8;
@@ -15,6 +16,7 @@
   justify-content: center;
   margin-left: 3%;
   cursor: pointer;
+  gap: 20px;
 }
 .navbar-link-area {
   display: flex;
@@ -70,6 +72,37 @@
   font-size: 13px;
   font-weight: 700;
 }
+.bar-header-icon {
+  display: none;
+  width: 20px;
+  
+}
+
+/* navbar menu open */
+
+.navbar-open-menu {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 30px;
+  background-color: var(--white);
+  width: 200px;
+  height: 90vh;
+  padding: 30px 20px;
+  transition: 850ms;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar-open-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
 @media (width > 576px) {
   .login-area .free-button {
     width: 126px;
@@ -79,6 +112,14 @@
   .logout-button {
     width: 78px;
     height: 35px;
+  }
+}
+@media (width < 768px) {
+  .bar-header-icon {
+    display: inline;
+  }
+  .navbar-link-area a{
+    display: none;
   }
 }
 @media (width > 800px) {

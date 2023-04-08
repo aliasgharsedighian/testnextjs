@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light-black: rgba(0, 0, 0, 0.1);
+  --very-light-black: rgba(0, 0, 0, 0.05);
+  --green: rgb(0, 155, 135);
+  --green-hover: rgb(0, 184, 159);
+  --light-green: rgba(0, 155, 135, 0.1);
+  --red: #d85140;
+  --red-hover: rgb(229 139 128);
+  --blue: #3d6b99;
+}
+
 .button {
   padding: 8px;
   font-size: small;

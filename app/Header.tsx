@@ -12,7 +12,9 @@ import {
   addUserLogged,
   changeActivity,
 } from "./GlobalRedux/Features/user/userSlice";
+import { Bars3Icon } from "@heroicons/react/20/solid";
 import DarkModeButton from "./DarkModeButton";
+import { useState } from "react";
 
 function Header() {
   const dispatch = useDispatch();
@@ -21,11 +23,49 @@ function Header() {
   const userAccount = useSelector(userAccountLogged);
   const items = useSelector(selectItems);
 
+  const [sidebar, setSidebar] = useState(false);
+
+  const openMenuHandle = () => {
+    // setOpenMenu((prev) => !prev);
+    setSidebar(!sidebar);
+    // if (navbarBgChange === false) {
+    //   setNavbarBgChange(true);
+    // }
+    // if (navbarBgChange === true && window.scrollY < 80) {
+    //   setNavbarBgChange(false);
+    // }
+  };
+
   return (
     <header className="navbar-container">
       <div className="navbar">
+        <div
+          className={sidebar ? "navbar-open-menu active" : "navbar-open-menu"}
+        >
+          <div className="navbar-open-menu-item">
+            <Link href="/">Home</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="/products">Products</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">Pricing</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">About</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">Contant</Link>
+          </div>
+        </div>
+
         <div className="logo-area">
-          <img src="images/Navbar/Logo.PNG" alt="" />
+          <div>
+            <Bars3Icon onClick={openMenuHandle} className="bar-header-icon" />
+          </div>
+          <div>
+            <img src="images/Navbar/Logo.PNG" alt="" />
+          </div>
           {/* <DarkModeButton /> */}
         </div>
         <div className="navbar-link-area">
