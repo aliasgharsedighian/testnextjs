@@ -2,14 +2,16 @@
   position: sticky;
   z-index: 50;
   top: 0;
-  
+
 }
+
 .navbar {
-  background-color: #fffcf8;
+  background-color: #ebebeb;
   display: flex;
   justify-content: space-between;
   height: 70px;
 }
+
 .logo-area {
   display: flex;
   align-items: center;
@@ -18,25 +20,30 @@
   cursor: pointer;
   gap: 20px;
 }
+
 .navbar-link-area {
   display: flex;
   align-items: center;
 }
+
 .navbar-link-area a {
   color: #14203e;
   font-size: 13px;
   padding-right: 15px;
 }
+
 .navbar-link-area a:active {
   scale: 1.1;
   transition: ease-in ease-out;
   transition-duration: 2s;
 }
+
 .login-area {
   display: flex;
   align-items: center;
   margin-right: 3%;
 }
+
 .login-area .login-button {
   background-color: #f6f0e8;
   margin-right: 10px;
@@ -44,6 +51,7 @@
   height: 30px;
   border-radius: 8px;
 }
+
 .login-area .logout-button {
   background-color: #f44336;
   margin-right: 10px;
@@ -52,6 +60,7 @@
   border-radius: 8px;
   color: #fff;
 }
+
 .login-area .free-button {
   background-color: #14203e;
   width: 110px;
@@ -59,23 +68,27 @@
   color: white;
   border-radius: 8px;
 }
+
 .free-button:active {
   scale: 1.03;
   transition: 0.1s;
 }
+
 .login-button:active,
 .logout-button:active {
   scale: 1.03;
   transition: 0.1s;
 }
+
 .login-area span {
   font-size: 13px;
   font-weight: 700;
 }
+
 .bar-header-icon {
   display: none;
   width: 20px;
-  
+
 }
 
 /* navbar menu open */
@@ -89,7 +102,7 @@
   justify-content: start;
   align-items: start;
   gap: 30px;
-  background-color: var(--white);
+  background-color: #ebebeb;
   width: 200px;
   height: 90vh;
   padding: 30px 20px;
@@ -98,6 +111,7 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .navbar-open-menu.active {
   left: 0;
   transition: 350ms;
@@ -108,26 +122,31 @@
     width: 126px;
     height: 35px;
   }
+
   .login-area .login-button,
   .logout-button {
     width: 78px;
     height: 35px;
   }
 }
+
 @media (width < 768px) {
   .bar-header-icon {
     display: inline;
   }
-  .navbar-link-area a{
+
+  .navbar-link-area a {
     display: none;
   }
 }
+
 @media (width > 800px) {
   .navbar-link-area a {
     font-size: 18px;
     padding-right: 30px;
   }
 }
+
 @media (width <576px) {
   .free-button {
     display: none;
