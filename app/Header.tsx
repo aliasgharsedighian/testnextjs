@@ -60,12 +60,9 @@ function Header() {
         </div>
 
         <div className="logo-area">
-          <div>
-            <Bars3Icon onClick={openMenuHandle} className="bar-header-icon" />
-          </div>
-          <div>
-            <img src="images/Navbar/Logo.PNG" alt="" />
-          </div>
+          <Bars3Icon onClick={openMenuHandle} className="bar-header-icon" />
+          <img src="images/Navbar/Logo.PNG" alt="" />
+
           {/* <DarkModeButton /> */}
         </div>
         <div className="navbar-link-area">
