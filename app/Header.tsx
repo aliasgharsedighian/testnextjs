@@ -14,16 +14,32 @@ import {
 } from "./GlobalRedux/Features/user/userSlice";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import DarkModeButton from "./DarkModeButton";
-import { useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { UserType } from "../typing";
 
 function Header() {
   const dispatch = useDispatch();
   const router = useRouter();
-  const userActivity = useSelector(activity);
+  const userActivity = useSelector<boolean>(activity);
   const userAccount = useSelector(userAccountLogged);
   const items = useSelector(selectItems);
 
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState<boolean>(false);
+
+  let menuRef = useRef(null);
+
+  useEffect(() => {
+    let handler = (e: FormEvent<HTMLDivElement>) => {
+      if (menuRef?.current && !menuRef.current.contains(e.target)) {
+        setSidebar(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, [menuRef, sidebar]);
 
   const openMenuHandle = () => {
     // setOpenMenu((prev) => !prev);
@@ -38,7 +54,7 @@ function Header() {
 
   return (
     <header className="navbar-container">
-      <div className="navbar">
+      <div className="navbar" ref={menuRef}>
         <div
           className={sidebar ? "navbar-open-menu active" : "navbar-open-menu"}
         >
