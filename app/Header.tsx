@@ -12,20 +12,73 @@ import {
   addUserLogged,
   changeActivity,
 } from "./GlobalRedux/Features/user/userSlice";
+import { Bars3Icon } from "@heroicons/react/20/solid";
 import DarkModeButton from "./DarkModeButton";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { UserType } from "../typing";
 
 function Header() {
   const dispatch = useDispatch();
   const router = useRouter();
-  const userActivity = useSelector(activity);
+  const userActivity = useSelector<boolean>(activity);
   const userAccount = useSelector(userAccountLogged);
   const items = useSelector(selectItems);
 
+  const [sidebar, setSidebar] = useState<boolean>(false);
+
+  let menuRef = useRef(null);
+
+  useEffect(() => {
+    let handler = (e: FormEvent<HTMLDivElement>) => {
+      if (menuRef?.current && !menuRef.current.contains(e.target)) {
+        setSidebar(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, [menuRef, sidebar]);
+
+  const openMenuHandle = () => {
+    // setOpenMenu((prev) => !prev);
+    setSidebar(!sidebar);
+    // if (navbarBgChange === false) {
+    //   setNavbarBgChange(true);
+    // }
+    // if (navbarBgChange === true && window.scrollY < 80) {
+    //   setNavbarBgChange(false);
+    // }
+  };
+
   return (
     <header className="navbar-container">
-      <div className="navbar">
+      <div className="navbar" ref={menuRef}>
+        <div
+          className={sidebar ? "navbar-open-menu active" : "navbar-open-menu"}
+        >
+          <div className="navbar-open-menu-item">
+            <Link href="/">Home</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="/products">Products</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">Pricing</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">About</Link>
+          </div>
+          <div className="navbar-open-menu-item">
+            <Link href="#">Contant</Link>
+          </div>
+        </div>
+
         <div className="logo-area">
+          <Bars3Icon onClick={openMenuHandle} className="bar-header-icon" />
           <img src="images/Navbar/Logo.PNG" alt="" />
+
           {/* <DarkModeButton /> */}
         </div>
         <div className="navbar-link-area">
