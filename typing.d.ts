@@ -29,3 +29,14 @@ export interface Product {
   image: string;
   rating: isNumberObject;
 }
+
+export interface Collections {
+  id: number;
+  mainImg: string;
+  image1: string;
+  image2: string;
+  image3: string;
+  image4: string;
+  tag: string;
+  view: string;
+}

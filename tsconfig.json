@@ -31,7 +31,8 @@
     "app/GlobalRedux/Features/basket/basketSlice.js",
     "app/GlobalRedux/provider.jsx",
     "app/products/loading.js",
-    "app/user-list/page.js"
+    "app/user-list/page.js",
+    "app/pageWrapper.jsx"
   ],
   "exclude": ["node_modules"]
 }

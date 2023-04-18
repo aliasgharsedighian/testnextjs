@@ -6,7 +6,7 @@ const fetchProducts = async () => {
   return products;
 };
 
-async function Products() {
+const Products = async () => {
   const products = await fetchProducts();
 
   return (
@@ -61,8 +61,110 @@ async function Products() {
             image={image}
           />
         ))}
+
+      {products
+        .slice(0, 4)
+        .map(({ id, title, price, description, category, image }) => {
+          return (
+            <Product
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              description={description}
+              category={category}
+              image={image}
+            />
+          );
+        })}
+
+      <img
+        className="md:col-span-full"
+        src="http://localhost:3000/images/adv.jpg"
+        alt=""
+      />
+
+      <div className="md:col-span-2">
+        {products
+          .slice(4, 5)
+          .map(({ id, title, price, description, category, image }) => (
+            <Product
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              description={description}
+              category={category}
+              image={image}
+            />
+          ))}
+      </div>
+      {products
+        .slice(5, products.length)
+        .map(({ id, title, price, description, category, image }) => (
+          <Product
+            key={id}
+            id={id}
+            title={title}
+            price={price}
+            description={description}
+            category={category}
+            image={image}
+          />
+        ))}
+
+      {products
+        .slice(0, 4)
+        .map(({ id, title, price, description, category, image }) => {
+          return (
+            <Product
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              description={description}
+              category={category}
+              image={image}
+            />
+          );
+        })}
+
+      <img
+        className="md:col-span-full"
+        src="http://localhost:3000/images/adv.jpg"
+        alt=""
+      />
+
+      <div className="md:col-span-2">
+        {products
+          .slice(4, 5)
+          .map(({ id, title, price, description, category, image }) => (
+            <Product
+              key={id}
+              id={id}
+              title={title}
+              price={price}
+              description={description}
+              category={category}
+              image={image}
+            />
+          ))}
+      </div>
+      {products
+        .slice(5, products.length)
+        .map(({ id, title, price, description, category, image }) => (
+          <Product
+            key={id}
+            id={id}
+            title={title}
+            price={price}
+            description={description}
+            category={category}
+            image={image}
+          />
+        ))}
     </div>
   );
-}
+};
 
 export default Products;

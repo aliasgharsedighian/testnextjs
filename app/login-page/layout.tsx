@@ -1,4 +1,5 @@
 import "../../styles/login-page.css";
+import PageWrapper from "../pageWrapper";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <section className="login-page-section">
-      <div className="login-page-container shadow-2xl">{children}</div>
+      <PageWrapper>
+        <div className="login-page-container shadow-2xl">{children}</div>
+      </PageWrapper>
     </section>
   );
 }

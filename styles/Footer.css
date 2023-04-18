@@ -2,10 +2,12 @@
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr 2fr; */
   width: 100%;
-  background-color: #1e2641;
+  background-color: var(--footer-bg);
   border-radius: 5px 5px 0px 0px;
   padding: 40px 80px;
-  color: #ffffff;
+  color: var(--white);
+  bottom: 0;
+  position: relative;
 }
 .info {
   display: flex;
@@ -46,9 +48,7 @@
   font-size: 0.8rem;
   margin-bottom: 10px;
 }
-.social-img {
-  display: flex;
-}
+
 .sub-social {
   display: flex;
   flex-direction: column;
@@ -92,10 +92,34 @@
 }
 .social-img img {
   cursor: pointer;
-  margin-right: 7px;
   width: 40px;
   border-radius: 5px;
+  background: var(--white);
 }
+.social-img {
+  display: flex;
+  gap: 7px;
+}
+
+.social-img img:hover {
+  animation: shake 0.55s;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+}
+
 @media screen and (width<= 950px) {
   .sub-input input {
     width: 150px;

@@ -13,12 +13,22 @@
   --red: #d85140;
   --red-hover: rgb(229 139 128);
   --blue: #3d6b99;
+  --yellow-button: #facc15;
+  --yellow-button-active: #eab308;
+
+  /* background colors */
+  --footer-bg: #1e2641;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .button {
   padding: 8px;
   font-size: small;
-  background-color: #facc15;
+  background-color: var(--yellow-button);
   border-color: rgb(253 224 71);
   border-radius: 5px;
 }
@@ -26,7 +36,7 @@
   outline: none;
 }
 .button:active {
-  background-color: #eab308;
+  background-color: var(--yellow-button-active);
 }
 
 .input {
@@ -35,7 +45,7 @@
   padding: 5px 5px;
 }
 .input:active {
-  border: 1px solid #eab308;
+  border: 1px solid var(--yellow-button-active);
 }
 
 @layer components {

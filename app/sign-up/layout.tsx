@@ -1,4 +1,5 @@
 import "../../styles/SignUpPage.css";
+import PageWrapper from "../pageWrapper";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <section className="sign-up-section">
-      <div className="sign-up-effect">{children}</div>
+      <PageWrapper>
+        <div className="sign-up-effect">{children}</div>
+      </PageWrapper>
     </section>
   );
 }

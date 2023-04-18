@@ -1,4 +1,5 @@
 import "../../styles/UserList.css";
+import PageWrapper from "../pageWrapper";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <section className="userList-section">
-      <div className="usersList-container">{children}</div>
+      <PageWrapper>
+        <div className="usersList-container">{children}</div>
+      </PageWrapper>
     </section>
   );
 }
