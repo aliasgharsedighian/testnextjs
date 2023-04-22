@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 function ProductsForm() {
   const [searchProduct, setSearchProduct] = useState("");
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     if (!searchProduct) return;
 
@@ -17,7 +17,9 @@ function ProductsForm() {
         className="placeholder-gray-500"
         type="text"
         value={searchProduct}
-        onChange={(e) => setSearchProduct(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setSearchProduct(e.target.value)
+        }
         placeholder="Search Product"
       />
       <button

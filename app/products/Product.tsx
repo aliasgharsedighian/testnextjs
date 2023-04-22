@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../GlobalRedux/Features/basket/basketSlice";
@@ -15,7 +15,16 @@ const images = {
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 
-function Product({ id, title, price, description, category, image }) {
+type Props = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+};
+
+function Product({ id, title, price, description, category, image }: Props) {
   const dispatch = useDispatch();
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
@@ -38,7 +47,6 @@ function Product({ id, title, price, description, category, image }) {
   return (
     <motion.div
       variants={images}
-      href={`/products/${id}`}
       className="relative flex flex-col m-5 bg-white z-30 p-10 shadow-xl rounded-xl"
     >
       <Link href={`/products/${id}`}>
@@ -53,7 +61,7 @@ function Product({ id, title, price, description, category, image }) {
         <h4 className="my-3">{title}</h4>
         <div className="flex">
           {Array(rating)
-            .fill()
+            .fill({})
             .map((_, i) => (
               <StarIcon className="h-5 text-yellow-500" />
             ))}

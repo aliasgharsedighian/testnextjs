@@ -5,7 +5,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
-import { selectItems } from "./GlobalRedux/Features/basket/basketSlice";
+import {
+  selectItems,
+  selectTotal,
+} from "./GlobalRedux/Features/basket/basketSlice";
 import {
   activity,
   userAccountLogged,
@@ -15,6 +18,8 @@ import {
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import CheckoutCard from "./products/checkout/CheckoutCard";
+import { ProductsType } from "../typing";
 
 const links = [
   { id: 1, href: "/", text: "Home" },
@@ -31,9 +36,12 @@ function Header() {
   const router = useRouter();
   const userActivity = useSelector<boolean>(activity);
   const userAccount = useSelector(userAccountLogged);
+
   const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
 
   const [sidebar, setSidebar] = useState<boolean>(false);
+  const [cartOpen, setCartOpen] = useState<boolean>(false);
 
   let menuRef = useRef(null);
 
@@ -41,6 +49,7 @@ function Header() {
     let handler = (e: FormEvent<HTMLDivElement>) => {
       if (menuRef?.current && !menuRef.current.contains(e.target)) {
         setSidebar(false);
+        setCartOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -89,6 +98,42 @@ function Header() {
           ))}
         </div>
 
+        <div
+          className={cartOpen ? "navbar-cart-open active" : "navbar-cart-open"}
+        >
+          {/* top  */}
+          <h2
+            onClick={() => router.push("/products/checkout")}
+            className="go-to-checkout-page button"
+          >
+            go to Checkout page
+          </h2>
+          {items.length > 0 ? (
+            <div className="navbar-cart-open-top">
+              <h2>
+                SubTotal({items.length} items):
+                <span>{`$  ${total}`}</span>
+              </h2>
+            </div>
+          ) : (
+            <h2>Your Basket is Empty</h2>
+          )}
+          {/* buttom */}
+          {items.map((item: ProductsType) => (
+            <CheckoutCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              rating={item.rating}
+              price={item.price}
+              description={item.description}
+              category={item.category}
+              image={item.image}
+              hasPrime={item.hasPrime}
+            />
+          ))}
+        </div>
+
         <motion.div
           initial={{ x: -100 }}
           animate={{ x: 0 }}
@@ -125,8 +170,8 @@ function Header() {
           className="login-area"
         >
           <div
-            onClick={() => router.push("/checkout")}
-            className="relative link flex items-center mr-5"
+            onClick={() => setCartOpen((prev) => !prev)}
+            className="relative link flex items-center mr-5 cursor-pointer hover:scale-105 transition-all duration-100 ease-in"
           >
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
               {items.length}

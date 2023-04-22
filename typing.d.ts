@@ -20,14 +20,15 @@ export interface UserType {
   fav: string[];
 }
 
-export interface Product {
+export interface ProductsType {
   id: number;
   title: string;
   price: number;
   description: string;
   category: string;
   image: string;
-  rating: isNumberObject;
+  rating: { rate: number; count: number };
+  hasPrime?: any;
 }
 
 export interface Collections {

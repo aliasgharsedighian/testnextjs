@@ -3,10 +3,10 @@
 import dataProducts from "../../pages/api/dataProducts.json";
 
 import ReactPaginate from "react-paginate";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Link from "next/link";
 
-function ProductsPaginate() {
+const ProductsPaginate = memo(() => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [pageNumber, setPageNumber] = useState(0);
@@ -95,6 +95,6 @@ function ProductsPaginate() {
       />
     </section>
   );
-}
+});
 
 export default ProductsPaginate;
