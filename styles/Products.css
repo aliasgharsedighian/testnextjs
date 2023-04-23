@@ -116,5 +116,5 @@
 
 /* checkout Page */
 .no-sign-in-checkout-btn {
-  background-color: silver;
+  background-color: silver !important;
 }

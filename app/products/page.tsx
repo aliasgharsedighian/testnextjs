@@ -11,7 +11,7 @@ const ProductsPage = memo(() => {
         <div className="products-title-filter">
           <div className="products-title">
             <h2>Our Products</h2>
-            <span></span>
+            <span className="dark:bg-slate-100"></span>
           </div>
           <div className="products-filter">
             <div className="products-category">
@@ -22,7 +22,7 @@ const ProductsPage = memo(() => {
               <p>electric</p>
             </div>
             <div className="products-filter-button">
-              <button>Filter</button>
+              <button className="dark:border-gray-100">Filter</button>
             </div>
           </div>
         </div>

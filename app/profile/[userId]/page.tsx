@@ -22,12 +22,20 @@ function ProfilePage({ params: { userId } }: PageProps) {
     <>
       <PageWrapper>
         {userActivity ? (
-          <section className="profile-page-container">
-            <div className="profile-settings">
-              <p>Public profile</p>
-              <p>Account settings</p>
-              <p>Notfication</p>
-              <p>Pro Account</p>
+          <section className="profile-page-container dark:bg-zinc-700">
+            <div className="profile-settings dark:border-r-gray-100/30">
+              <p className="dark:text-gray-100 dark:hover:bg-zinc-600">
+                Public profile
+              </p>
+              <p className="dark:text-gray-100 dark:hover:bg-zinc-600">
+                Account settings
+              </p>
+              <p className="dark:text-gray-100 dark:hover:bg-zinc-600">
+                Notfication
+              </p>
+              <p className="dark:text-gray-100 dark:hover:bg-zinc-600">
+                Pro Account
+              </p>
             </div>
             <div className="profile-info">
               <h2>Public profile</h2>
@@ -41,36 +49,74 @@ function ProfilePage({ params: { userId } }: PageProps) {
               <div className="profile-personal-info">
                 <div className="profile-fir-las">
                   <div className="profile-fir">
-                    <label htmlFor="">First name</label>
-                    <input type="text" value={user.firstname} />
+                    <label className="dark:text-gray-100" htmlFor="">
+                      First name
+                    </label>
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={user.firstname}
+                    />
                   </div>
                   <div className="profile-las">
-                    <label htmlFor="">Last name</label>
-                    <input type="text" value={user.lastname} />
+                    <label className="dark:text-gray-100 " htmlFor="">
+                      Last name
+                    </label>
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={user.lastname}
+                    />
                   </div>
                 </div>
                 <div className="profile-other-info">
                   <div className="profile--info">
-                    <label htmlFor="">Location</label>
-                    <input type="text" value={`${user.country} ${user.city}`} />
+                    <label className="dark:text-gray-100" htmlFor="">
+                      Location
+                    </label>
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={`${user.country} ${user.city}`}
+                    />
                   </div>
                   <div className="profile--info">
-                    <label htmlFor="">Profession</label>
-                    <input type="text" value={"Front-end Developer"} />
+                    <label className="dark:text-gray-100" htmlFor="">
+                      Profession
+                    </label>
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={"Front-end Developer"}
+                    />
                   </div>
                   <div className="profile-bio-info">
-                    <label htmlFor="">Bio</label>
-                    <input type="text" value={"open source designer"} />
+                    <label className="dark:text-gray-100" htmlFor="">
+                      Bio
+                    </label>
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={"open source designer"}
+                    />
                   </div>
                   <h3>Online presence</h3>
 
                   <div className="profile---info">
                     <img src="/images/social/dribbble.png" alt="" />
-                    <input type="text" value={"https://. . ."} />
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={"https://. . ."}
+                    />
                   </div>
                   <div className="profile---info">
                     <img src="/images/social/instagram.jpg" alt="" />
-                    <input type="text" value={"https://. . ."} />
+                    <input
+                      className="dark:border-gray-100 dark:text-gray-100"
+                      type="text"
+                      value={"https://. . ."}
+                    />
                   </div>
                   <div className="bottom-profile-btn">
                     <a href="#">+ Add other</a>

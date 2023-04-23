@@ -22,9 +22,9 @@ function HomePage() {
       <PageWrapper>
         <section className="sample-container ">
           <div className="sample-title">
-            <span className=""></span>
+            <span className=" dark:bg-white opacity-100"></span>
             <h5>Sample convert figma Design</h5>
-            <span className=""></span>
+            <span className="dark:bg-white opacity-100"></span>
           </div>
           <motion.div
             variants={variants}
@@ -37,7 +37,7 @@ function HomePage() {
                 <motion.div
                   variants={images}
                   key={sample.id}
-                  className="sample-area"
+                  className="sample-area dark:bg-gray-100 dark:shadow-lg"
                 >
                   <div className="sample-img">
                     <Link href={sample.link}>

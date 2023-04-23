@@ -51,7 +51,7 @@ function CheckoutCard({
     <div className="checkout-card-container">
       <div className="checkout-card-content-left">
         <img src={image} alt="" />
-        <div className="checkout-card-content-detail">
+        <div className="checkout-card-content-detail dark:text-gray-900">
           <p>{title}</p>
           <span>${price}</span>
         </div>

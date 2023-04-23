@@ -20,6 +20,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import CheckoutCard from "./products/checkout/CheckoutCard";
 import { ProductsType } from "../typing";
+import DarkModeButton from "./DarkModeButton";
 
 const links = [
   { id: 1, href: "/", text: "Home" },
@@ -90,7 +91,7 @@ function Header() {
               className={`${
                 link.href === path
                   ? "navbar-link-selected active"
-                  : "navbar-link-selected"
+                  : "navbar-link-selected dark:text-gray-900"
               }`}
             >
               <Link href={link.href}>{link.text}</Link>
@@ -104,19 +105,19 @@ function Header() {
           {/* top  */}
           <h2
             onClick={() => router.push("/products/checkout")}
-            className="go-to-checkout-page button"
+            className="go-to-checkout-page addButton dark:text-gray-900"
           >
             go to Checkout page
           </h2>
           {items.length > 0 ? (
             <div className="navbar-cart-open-top">
-              <h2>
+              <h2 className="dark:text-gray-900">
                 SubTotal({items.length} items):
                 <span>{`$  ${total}`}</span>
               </h2>
             </div>
           ) : (
-            <h2>Your Basket is Empty</h2>
+            <h2 className="dark:text-gray-900">Your Basket is Empty</h2>
           )}
           {/* buttom */}
           {items.map((item: ProductsType) => (
@@ -140,10 +141,13 @@ function Header() {
           transition={{ delay: 0.65 }}
           className="logo-area"
         >
-          <Bars3Icon onClick={openMenuHandle} className="bar-header-icon" />
+          <Bars3Icon
+            onClick={openMenuHandle}
+            className="bar-header-icon dark:text-gray-900"
+          />
           <img src="images/Navbar/Logo.PNG" alt="" />
 
-          {/* <DarkModeButton /> */}
+          <DarkModeButton />
         </motion.div>
         <div className="navbar-link-area">
           {links.map((link) => (
@@ -176,14 +180,18 @@ function Header() {
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
               {items.length}
             </span>
-            <ShoppingCartIcon className="h-[35px]" />
-            <p className="hidden md:inline font-extrabold md:text-sm mt-2">
+            <ShoppingCartIcon className="h-[32px] text-gray-900 dark:text-gray-900" />
+            <p className="hidden md:inline font-extrabold md:text-sm mt-2 dark:text-gray-900">
               Basket
             </p>
           </div>
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className={userActivity ? "logout-button" : "login-button"}
+            className={
+              userActivity
+                ? "logout-button"
+                : "login-button dark:text-gray-900 dark:border-[1px] dark:border-gray-900"
+            }
             onClick={() => {
               if (userActivity == false) {
                 router.push("/login-page");
@@ -196,7 +204,10 @@ function Header() {
             {userActivity ? "Log out" : "Log in"}
           </motion.button>
           {userActivity ? (
-            <span>{`Hello, ${userAccount.firstname}`}</span>
+            <span
+              onClick={() => router.push("/profile/user-email")}
+              className="dark:text-gray-900 cursor-pointer"
+            >{`Hello, ${userAccount.firstname}`}</span>
           ) : (
             <button className="free-button">Start free trial</button>
           )}

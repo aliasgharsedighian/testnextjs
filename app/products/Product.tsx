@@ -50,7 +50,7 @@ function Product({ id, title, price, description, category, image }: Props) {
       className="relative flex flex-col m-5 bg-white z-30 p-10 shadow-xl rounded-xl"
     >
       <Link href={`/products/${id}`}>
-        <p className="absolute top-2 right-2 text-xs italic text-gray-400 ">
+        <p className="absolute top-2 right-2 text-xs italic text-gray-400 dark:text-gray-400">
           {category}
         </p>
         <img
@@ -58,7 +58,7 @@ function Product({ id, title, price, description, category, image }: Props) {
           alt=""
           className="h-[200px] w-[200px] object-contain mx-auto"
         />
-        <h4 className="my-3">{title}</h4>
+        <h4 className="my-3 dark:text-gray-900">{title}</h4>
         <div className="flex">
           {Array(rating)
             .fill({})
@@ -66,8 +66,10 @@ function Product({ id, title, price, description, category, image }: Props) {
               <StarIcon className="h-5 text-yellow-500" />
             ))}
         </div>
-        <p className="text-xs my-2 line-clamp-2">{description}</p>
-        <div className="mb-5">
+        <p className="text-xs my-2 line-clamp-2 dark:text-gray-900">
+          {description}
+        </p>
+        <div className="mb-5 dark:text-gray-900">
           <p>${price}</p>
         </div>
         {hasPrime && (
@@ -81,7 +83,10 @@ function Product({ id, title, price, description, category, image }: Props) {
           </div>
         )}
       </Link>
-      <button onClick={addItemToBasket} className="mt-auto addButton">
+      <button
+        onClick={addItemToBasket}
+        className="mt-auto addButton dark:text-gray-900"
+      >
         Add to Basket
       </button>
     </motion.div>

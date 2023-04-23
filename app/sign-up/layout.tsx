@@ -7,9 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="sign-up-section">
+    <section className="sign-up-section dark:bg-zinc-800">
       <PageWrapper>
-        <div className="sign-up-effect">{children}</div>
+        <div className="sign-up-effect dark:bg-zinc-700">{children}</div>
       </PageWrapper>
     </section>
   );

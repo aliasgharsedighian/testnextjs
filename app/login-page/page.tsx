@@ -4,26 +4,28 @@ import LoginForm from "./LoginForm";
 function LoginPage() {
   return (
     <>
-      <h2>Log in</h2>
+      <h2 className="dark:text-gray-100">Log in</h2>
       <LoginForm />
-      <span>OR</span>
+      <span className="dark:text-gray-400">OR</span>
       <div className="login-btn-link">
-        <div className="social-login-btn">
+        <div className="social-login-btn dark:bg-zinc-500">
           <img src="images/social/google-logo.png" alt="" />
-          <p>Continue with Google</p>
+          <p className="dark:text-gray-100">Continue with Google</p>
         </div>
-        <div className="social-login-btn">
+        <div className="social-login-btn dark:bg-zinc-500">
           <img src="images/social/microsoft-logo.png" alt="" />
-          <p>Continue with Microsoft</p>
+          <p className="dark:text-gray-100">Continue with Microsoft</p>
         </div>
-        <div className="social-login-btn">
+        <div className="social-login-btn dark:bg-zinc-500">
           <img src="images/social/apple-logo.png" alt="" />
-          <p>Continue with Apple</p>
+          <p className="dark:text-gray-100">Continue with Apple</p>
         </div>
       </div>
       <div className="info-login-page">
         <Link href="/sign-up">
-          <p>can't log in? Already have an account?</p>
+          <p className="dark:text-gray-100">
+            can't log in? Already have an account?
+          </p>
         </Link>
       </div>
     </>

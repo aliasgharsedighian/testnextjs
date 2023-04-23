@@ -47,13 +47,13 @@ function CheckoutPage() {
         <div className="flex flex-col bg-white p-10 shadow-md">
           {items.length > 0 && (
             <>
-              <h2 className="whitespace-nowrap">
+              <h2 className="whitespace-nowrap dark:text-gray-900">
                 Subtotal ({items.length} items):
                 <span className="font-bold">{` $  ${total}`}</span>
               </h2>
               <button
                 disabled={!session}
-                className={`button mt-2 ${
+                className={`addButton mt-2 ${
                   !session &&
                   "no-sign-in-checkout-btn from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed"
                 }`}
