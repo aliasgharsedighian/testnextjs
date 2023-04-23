@@ -1,5 +1,6 @@
+import { notFound } from "next/navigation";
 import React from "react";
-import { Product } from "../../../typing";
+import { ProductsType } from "../../../typing";
 
 type PageProps = {
   params: {
@@ -10,11 +11,16 @@ type PageProps = {
 const fetchProduct = async (productId: number) => {
   const res = await fetch(`https://fakestoreapi.com/products/${productId}`);
   const product = await res.json();
-  return product;
+  console.log(res);
+  if (res.status === 200) {
+    return product;
+  } else {
+    return notFound;
+  }
 };
 
 async function ProductPage({ params: { productId } }: PageProps) {
-  const product: Product = await fetchProduct(productId);
+  const product: ProductsType = await fetchProduct(productId);
   const { id, title, price, description, category, image, rating } = product;
   return (
     <div className="mx-auto flex flex-col items-center justify-center max-w-2xl">

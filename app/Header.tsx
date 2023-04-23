@@ -145,7 +145,7 @@ function Header() {
             onClick={openMenuHandle}
             className="bar-header-icon dark:text-gray-900"
           />
-          <img src="images/Navbar/Logo.PNG" alt="" />
+          <img src="http://localhost:3000/images/Navbar/Logo.PNG" alt="" />
 
           <DarkModeButton />
         </motion.div>

@@ -37,19 +37,34 @@ function Footer() {
           <p>Contact me on social media</p>
           <div className="social-img">
             <a href="https://www.linkedin.com/in/ali-asghar-sedighian-53b80b25b/">
-              <img src="images/social/linkedin.png" alt="" />
+              <img
+                src="http://localhost:3000/images/social/linkedin.png"
+                alt=""
+              />
             </a>
             <a href="https://twitter.com/AliA_sedighian">
-              <img src="images/social/twitter.PNG" alt="" />
+              <img
+                src="http://localhost:3000/images/social/twitter.PNG"
+                alt=""
+              />
             </a>
             <a href="https://www.instagram.com/ali_asghar.sedighian/">
-              <img src="images/social/instagram.PNG" alt="" />
+              <img
+                src="http://localhost:3000/images/social/instagram.PNG"
+                alt=""
+              />
             </a>
             <a href="https://telegram.me/aliasghar_sedighian">
-              <img src="images/social/telegram-logo.png" alt="" />
+              <img
+                src="http://localhost:3000/images/social/telegram-logo.png"
+                alt=""
+              />
             </a>
             <a href="https://www.facebook.com/aliasghar.sedighian.3/">
-              <img src="images/social/facebook.PNG" alt="" />
+              <img
+                src="http://localhost:3000/images/social/facebook.PNG"
+                alt=""
+              />
             </a>
           </div>
         </div>
