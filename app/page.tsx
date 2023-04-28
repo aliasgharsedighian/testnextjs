@@ -47,6 +47,11 @@ function HomePage() {
                   <div className="sample-text">
                     <Link href={sample.link}>
                       <p>{sample.title}</p>
+                      {sample.description && (
+                        <p className="sample-description">
+                          {sample?.description}
+                        </p>
+                      )}
                     </Link>
                     <span>{sample.date}</span>
                   </div>

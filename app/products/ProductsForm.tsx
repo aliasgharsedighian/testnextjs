@@ -12,7 +12,10 @@ function ProductsForm() {
     // navigate(`/serach-products?term=${searchProduct}`);
   };
   return (
-    <form onSubmit={handleSearch} className="search-products-input gap-5">
+    <form
+      onSubmit={handleSearch}
+      className="search-products-input gap-5 w-full"
+    >
       <input
         className="placeholder-gray-500 dark:placeholder-gray-100 dark:border-[1px] dark:border-gray-100 dark:py-6 dark:px-2 "
         type="text"

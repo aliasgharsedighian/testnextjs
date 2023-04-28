@@ -8,6 +8,7 @@
   color: var(--white);
   bottom: 0;
   position: relative;
+  margin-top: auto;
 }
 .info {
   display: flex;

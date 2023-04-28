@@ -4,21 +4,20 @@ import {
   BriefcaseIcon,
   EnvelopeIcon,
   CodeBracketIcon,
+  PhoneIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
 
 function PortfolioPage() {
   return (
     <div className="container">
       {/* <!--=============== NAVIGATION MENU ===============--> */}
-      <div className="menu">
+      <div className="menu dark:bg-zinc-700">
         <a href="#welcome-section" className="menu-icon">
           <HomeIcon className="h-[25px]" />
         </a>
         <a href="#about" className="menu-icon">
           <UserIcon className="h-[25px]" />
-        </a>
-        <a href="#projects" className="menu-icon">
-          <CodeBracketIcon className="h-[25px]" />
         </a>
         <a href="#experience" className="menu-icon">
           <BriefcaseIcon className="h-[25px]" />
@@ -34,48 +33,69 @@ function PortfolioPage() {
           <img className="header-img" src="./images/Myself.jpg" alt="" />
           <h1>Ali Asghar Sedighian</h1>
           <h2>Frontend Developer</h2>
-          <div className="detail">
-            <div className="detail-call">
-              <p>(+98)903-6070804</p>
+          <div className="detail flex flex-col gap-4 mt-4">
+            <div className="detail-call flex gap-2 cursor-pointer">
+              <PhoneIcon width="15px" />
+              <a href="tel:00989036070804">(+98)903-6070804</a>
             </div>
-            <div className="detail-mail">
+            <div className="detail-mail flex gap-2 cursor-pointer">
+              <EnvelopeIcon width="15px" />
               <p>
-                <a>as.sedighian@gmail.com</a>
+                <a href="mailto:as.sedighian@gmail.com">
+                  as.sedighian@gmail.com
+                </a>
               </p>
             </div>
-            <div className="detail-location">
+            <div className="detail-location flex gap-2">
+              <MapPinIcon width="15px" />
               <p>Tehran, IR</p>
             </div>
-            <div className="detail-military-service">
+            <div className="detail-military-service flex">
               <p>Military Service: Served(2020-2022)</p>
             </div>
           </div>
-          <div className="socials">
+          <div className="socials flex">
             <a
               href="https://www.linkedin.com/in/ali-asghar-sedighian-53b80b25b/"
               target="_blank"
               className="fab fa-linkedin-in"
               id="profile-link"
-            ></a>
+            >
+              <img
+                width="30px"
+                src="http://localhost:3000/images/social/linkedin.png"
+                alt=""
+              />
+            </a>
+
             <a
               href="https://github.com/aliasgharsedighian"
               target="_blank"
               className="fab fa-github"
-            ></a>
+            >
+              <img
+                width="30px"
+                src="http://localhost:3000/images/social/githubicon.png"
+                alt=""
+              />
+            </a>
           </div>
-          <a href="" className="cta">
-            DownIoad CV
-          </a>
         </section>
         {/* <!--=============== CONTENT SECTION ===============--> */}
-        <div className="content">
+        <div className="content dark:bg-zinc-700">
           {/* <!--=============== HOME ===============--> */}
           <section className="content-card home" id="welcome-section">
             <h1>Hello, I am Ali Asghar Sedighian</h1>
+            <a
+              href=""
+              className="cta mt-10 border border-slate-900 py-3 px-5 rounded-full bg-slate-900 text-white"
+            >
+              DownIoad CV
+            </a>
           </section>
           {/* <!--=============== ABOUT ME ===============--> */}
           <section className="content-card about" id="about">
-            <h1>About me</h1>
+            <h1 className="font-bold text-[20px]">About me</h1>
             <div className="about-item about-me">
               <p>
                 Front-End Developer. Passionate about learning and development
@@ -84,26 +104,28 @@ function PortfolioPage() {
                 maximize user efficiency
               </p>
             </div>
-            <div className="col-2">
-              <div className="about-item skills">
+            <div className="skills-education-container">
+              <div className="about-item skills flex flex-col gap-4">
                 <h1>Skills</h1>
-                <span className="skill">HTML</span>
-                <span className="skill">Responsive CSS</span>
-                <span className="skill">JavaScript</span>
-                <span className="skill">ReactJS</span>
-                <span className="skill">NextJS</span>
-                <span className="skill">TypeScript</span>
-                <span className="skill">Git</span>
-                <span className="skill">Restful API</span>
-                <span className="skill">TailwindCss</span>
-                <span className="skill">PWA</span>
-                <span className="skill">Sass</span>
-                <span className="skill">Jest</span>
+                <div className="grid grid-cols-3 gap-3">
+                  <span className="skill">HTML</span>
+                  <span className="skill">Resp CSS</span>
+                  <span className="skill">JavaScript</span>
+                  <span className="skill">ReactJS</span>
+                  <span className="skill">NextJS</span>
+                  <span className="skill">TypeScript</span>
+                  <span className="skill">Git</span>
+                  <span className="skill">Restful API</span>
+                  <span className="skill">TailwindCss</span>
+                  <span className="skill">PWA</span>
+                  <span className="skill">Sass</span>
+                  <span className="skill">Jest</span>
+                </div>
               </div>
-              <div className="about-item languages">
+              <div className="about-item languages flex flex-col gap-4">
                 <h1>Education</h1>
                 <p>Bachelor of Science</p>
-                <p>Islamic Azad University f Parand</p>
+                <p>Islamic Azad University of Parand</p>
                 <div>
                   <p>2013-2018</p>
                 </div>
@@ -118,76 +140,10 @@ function PortfolioPage() {
               </div>
             </div>
           </section>
-          {/* <!--=============== PROJECTS ===============--> */}
-          <section className="content-card projects" id="projects">
-            <h1>Projects</h1>
-            <div className="col-2 project-list">
-              <div className="project-tile">
-                <img
-                  src="https://shots.codepen.io/nietoperq/pen/BaPJqGW-512.webp?version=1674304822"
-                  alt=""
-                />
-                <div className="overlay">
-                  <div className="project-description">
-                    <h3>Project 1</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nisi aperiam voluptate accusamus velit omnis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-tile">
-                <img
-                  src="https://shots.codepen.io/nietoperq/pen/GRBOjyV-512.webp?version=1674084446"
-                  alt=""
-                />
-                <div className="overlay">
-                  <div className="project-description">
-                    <h3>Project 2</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nisi aperiam voluptate accusamus velit omnis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-tile">
-                <img
-                  src="https://shots.codepen.io/nietoperq/pen/dyjWxgX-512.webp?version=1673554073"
-                  alt=""
-                />
-                <div className="overlay">
-                  <div className="project-description">
-                    <h3>Project 3</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nisi aperiam voluptate accusamus velit omnis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-tile">
-                <img
-                  src="https://shots.codepen.io/nietoperq/pen/vYagdwo-512.webp?version=1673549480"
-                  alt=""
-                />
-                <div className="overlay">
-                  <div className="project-description">
-                    <h3>Project 4</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nisi aperiam voluptate accusamus velit omnis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a href="https://github.com/nietoperq">see more...</a>
-          </section>
+
           {/* <!--=============== EXPERIENCE ===============--> */}
           <section className="content-card experience" id="experience">
-            <h1>Experience</h1>
+            <h1 className="font-bold text-[20px]">Experience</h1>
             <div className="timeline">
               <div className="timeline-items">
                 <div className="timeline-item">
@@ -215,7 +171,7 @@ function PortfolioPage() {
           </section>
           {/* <!--=============== CONTACT ===============--> */}
           <section className="content-card contact" id="contact">
-            <h1>Contact</h1>
+            <h1 className="font-bold text-[20px]">Contact</h1>
             <form
               className="form"
               id="form"

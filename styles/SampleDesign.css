@@ -36,6 +36,11 @@
   box-shadow: 1px 1px 3px 0px rgba(19, 43, 80, 0.4);
   margin: 15px 15px;
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.sample-area:hover .sample-description {
+  left: 0;
 }
 .sample-img {
   display: flex;
@@ -63,6 +68,19 @@
   font-weight: bolder;
   color: #14203e;
   cursor: pointer;
+}
+.sample-description {
+  position: absolute;
+  top: 0;
+  left: -300px;
+  width: 100%;
+  height: 260px;
+
+  font-weight: 400 !important;
+  line-height: 25px;
+  font-size: 14px !important;
+  background-color: white;
+  transition: all 350ms ease-in-out;
 }
 .sample-text span {
   margin-top: 10px;

@@ -66,12 +66,26 @@
 .products-category {
   display: flex;
   gap: 20px;
+  height: 40px;
+  align-items: center;
 }
 
-.products-category p {
+.products-category a {
   font-size: 12px;
+  cursor: pointer;
 }
-
+.products-category a:hover {
+  background: #1abc9c;
+  color: white;
+  border-radius: 7px;
+  padding: 7px 2px;
+}
+.products-category a.active {
+  background: #1abc9c;
+  color: white;
+  border-radius: 7px;
+  padding: 7px 2px;
+}
 .products-area {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
