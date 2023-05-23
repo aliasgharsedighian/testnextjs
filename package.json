@@ -14,6 +14,7 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
+    "react-collapsed": "^4.0.2",
     "react-dom": "18.2.0",
     "react-paginate": "^8.1.5",
     "react-redux": "^8.0.5",

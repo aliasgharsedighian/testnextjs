@@ -6,7 +6,6 @@ import {
   activity,
   userAccountLogged,
 } from "../../GlobalRedux/Features/user/userSlice";
-import { UserType } from "../../../typing";
 import PageWrapper from "../../pageWrapper";
 
 type PageProps = {

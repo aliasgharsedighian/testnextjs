@@ -29,7 +29,7 @@ export const SampleDesignData = [
     img: "http://localhost:3000/images/sample/profile.png",
     title: "Profile Page , You must login for this page",
     date: "March 3, 2023",
-    link: `/profile/user-email`,
+    link: `/profile/firstname lastname`,
   },
   {
     id: 3,
