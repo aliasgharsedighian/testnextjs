@@ -11,15 +11,15 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <ThemeProviders>
-        <body className="bg-gray-100 dark:bg-zinc-800 transition-all duration-700">
+      <body className="bg-gray-100 dark:bg-zinc-800 transition-all duration-700">
+        <ThemeProviders>
           <ReduxProviders>
             <Header />
             <div>{children}</div>
             <Footer />
           </ReduxProviders>
-        </body>
-      </ThemeProviders>
+        </ThemeProviders>
+      </body>
     </html>
   );
 }

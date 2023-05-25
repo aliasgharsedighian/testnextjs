@@ -63,7 +63,7 @@ function Product({ id, title, price, description, category, image }: Props) {
           {Array(rating)
             .fill({})
             .map((_, i) => (
-              <StarIcon className="h-5 text-yellow-500" />
+              <StarIcon key={i} className="h-5 text-yellow-500" />
             ))}
         </div>
         <p className="text-xs my-2 line-clamp-2 dark:text-gray-900">
@@ -76,7 +76,7 @@ function Product({ id, title, price, description, category, image }: Props) {
           <div className="flex items-center space-x-2 -mt-5">
             <img
               className="w-12"
-              src="http://localhost:3000/images/imgs/Prime-tag-.png"
+              src="http://localhost:3000/images/Prime-tag-.png"
               alt=""
             />
             <p className="text-xs text-gray-500">FREE Next-day Delivery</p>

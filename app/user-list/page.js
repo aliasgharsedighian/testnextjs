@@ -6,16 +6,23 @@ import { useSelector } from "react-redux";
 import { addedUser } from "../GlobalRedux/Features/user/userSlice";
 import { useState } from "react";
 import { userCategories } from "../../constants";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function UserListPage() {
+  const [popupUser, setPopupUser] = useState([]);
+  const [popupUserStatus, setPopupUserStatus] = useState(false);
+
   const users = useSelector(addedUser);
   const [searchTerm, setSearchTerm] = useState("");
-  const pathname = window.location.pathname;
-  const router = useRouter();
+  const pathname = usePathname();
 
   const isActive = (path) => {
     return pathname?.split("/").pop() === path;
+  };
+
+  const getInfoUserForPopup = (user) => {
+    setPopupUser([user]);
+    setPopupUserStatus((prev) => !prev);
   };
   return (
     <>
@@ -74,7 +81,7 @@ function UserListPage() {
             return (
               <div
                 key={user.id}
-                onClick={() => router.push(`/user-list/${user.id}`)}
+                onClick={() => getInfoUserForPopup(user)}
                 className="user-area"
               >
                 <div className="user-img">
@@ -99,6 +106,44 @@ function UserListPage() {
             );
           })}
       </div>
+      {popupUserStatus && (
+        <div className="popup-container">
+          {popupUser.map((user) => {
+            return (
+              <div className="popup-content">
+                <span
+                  class="popup-story-close"
+                  onClick={() => {
+                    setPopupUserStatus(false);
+                    setPopupUser([]);
+                  }}
+                >
+                  &times;
+                </span>
+                <div className="user-img">
+                  <img src={user.img} alt="" />
+                </div>
+                <div className="user-detail">
+                  <div className="user-name">
+                    <h6>
+                      {user.firstname} {user.lastname}
+                    </h6>
+                    <p>
+                      {user.city}, {user.country}
+                    </p>
+                  </div>
+                  <div className="user-email">{user.email}</div>
+                  <div className="user-fav">
+                    {user.fav?.map((favorite) => (
+                      <span>{favorite}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }

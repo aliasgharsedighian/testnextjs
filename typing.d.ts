@@ -27,7 +27,7 @@ export interface ProductsType {
   description: string;
   category: string;
   image: string;
-  rating: { rate: number; count: number };
+  rating: number;
   hasPrime?: any;
 }
 

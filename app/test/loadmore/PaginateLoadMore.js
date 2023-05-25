@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 function PaginateLoadMore() {
   const [item, setItem] = useState([]);
   const [visible, setVisible] = useState(3);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,12 +18,16 @@ function PaginateLoadMore() {
   }, []);
 
   const showMorePost = () => {
-    setVisible((prev) => prev + 3);
+    setLoading(true);
+    setTimeout(() => {
+      setVisible((prev) => prev + 3);
+      setLoading(false);
+    }, 3000);
   };
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 mx-auto max-w-4xl my-10">
         {item &&
           item.slice(0, visible).map((item) => {
             return (
@@ -39,10 +44,14 @@ function PaginateLoadMore() {
           })}
       </div>
       <button
+        disabled={loading}
         onClick={showMorePost}
-        className="mt-10 flex items-center justify-center text-center w-full"
+        className="load-more-btn mt-10 flex items-center justify-center text-center"
       >
         Load More
+        <span className={`${loading ? "loading active" : "loading"}`}>
+          <span></span>
+        </span>
       </button>
     </div>
   );
