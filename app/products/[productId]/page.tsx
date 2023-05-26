@@ -28,7 +28,6 @@ async function ProductPage({ params: { productId } }: PageProps) {
       <p>Title: {title}</p>
       <p>Price: {price}</p>
       <p>Description: {description}</p>
-      <p>rating: {product.rating.rate}</p>
     </div>
   );
 }

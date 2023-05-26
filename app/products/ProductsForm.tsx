@@ -5,7 +5,7 @@ import { ChangeEvent, useState } from "react";
 function ProductsForm() {
   const [searchProduct, setSearchProduct] = useState("");
 
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleSearch: any = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     if (!searchProduct) return;
 

@@ -9,4 +9,4 @@ function Swatch({ color }) {
   );
 }
 
-export default Swatch;
+export default React.memo(Swatch);

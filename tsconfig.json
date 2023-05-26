@@ -32,7 +32,8 @@
     "app/GlobalRedux/provider.jsx",
     "app/products/loading.js",
     "app/user-list/page.js",
-    "app/pageWrapper.jsx"
+    "app/pageWrapper.jsx",
+    "app/test/localstorageinuseeffect/page.js"
   ],
   "exclude": ["node_modules"]
 }

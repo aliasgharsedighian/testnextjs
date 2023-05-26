@@ -44,9 +44,10 @@ body {
 }
 
 .input {
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   padding: 5px 5px;
+  outline: none;
 }
 .input:active {
   border: 1px solid var(--yellow-button-active);

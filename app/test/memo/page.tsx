@@ -2,8 +2,9 @@
 import React, { memo } from "react";
 import { useState } from "react";
 import Swatch from "./Swatch";
+import Link from "next/link";
 
-const MemoedSwatch = memo(Swatch);
+// const MemoedSwatch = memo(Swatch);
 
 function MemoPage() {
   const [appRenderIndex, SetAppRenderIndex] = useState(0);
@@ -26,8 +27,11 @@ function MemoPage() {
         </button>
       </div>
       <div>
-        <MemoedSwatch color={color} />
-        <MemoedSwatch color={color === "red" ? "blue" : "red"} />
+        <Swatch color={color} />
+        <Swatch color={color === "red" ? "blue" : "red"} />
+      </div>
+      <div>
+        <Link href="/test/memo/usememo">useMemo example</Link>
       </div>
     </div>
   );

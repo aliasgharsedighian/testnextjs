@@ -12,6 +12,20 @@ function TestPage() {
       </Link>
       <Link href="/test/showmore">Show More in map item</Link>
       <Link href="/test/suspense">Suspense Example</Link>
+      <Link href="/test/localstorageinuseeffect">
+        Local Storage In UseEffect in react
+      </Link>
+      <Link href="/test/setinterval">
+        setInterval in react components with useEffect
+      </Link>
+      <Link href="/test/usetransition">useTransition Hook</Link>
+      <Link href="/test/usedeferredvalue">useDeferredValue Hook</Link>
+      <Link href="/test/usecallback">useCallback Hook</Link>
+      <Link href="/test/passchildtoparent">
+        Pass data from child to parent and use spread to pass data from parnet
+        to child
+      </Link>
+      <Link href="/test/crud">Get , Post , Put, Delete in react</Link>
     </div>
   );
 }
