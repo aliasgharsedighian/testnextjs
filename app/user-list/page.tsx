@@ -7,20 +7,21 @@ import { addedUser } from "../GlobalRedux/Features/user/userSlice";
 import { useState } from "react";
 import { userCategories } from "../../constants";
 import { usePathname } from "next/navigation";
+import { UserType } from "../../typing";
 
 function UserListPage() {
-  const [popupUser, setPopupUser] = useState([]);
+  const [popupUser, setPopupUser] = useState<UserType[]>([]);
   const [popupUserStatus, setPopupUserStatus] = useState(false);
 
   const users = useSelector(addedUser);
   const [searchTerm, setSearchTerm] = useState("");
   const pathname = usePathname();
 
-  const isActive = (path) => {
+  const isActive = (path: string) => {
     return pathname?.split("/").pop() === path;
   };
 
-  const getInfoUserForPopup = (user) => {
+  const getInfoUserForPopup = (user: UserType) => {
     setPopupUser([user]);
     setPopupUserStatus((prev) => !prev);
   };
@@ -60,7 +61,7 @@ function UserListPage() {
       </div>
       <div className="usersList-area">
         {users
-          .filter((val) => {
+          .filter((val: UserType) => {
             if (searchTerm == "") {
               return val;
             } else if (
@@ -77,7 +78,7 @@ function UserListPage() {
               return val;
             }
           })
-          .map((user) => {
+          .map((user: UserType) => {
             return (
               <div
                 key={user.id}
@@ -108,11 +109,11 @@ function UserListPage() {
       </div>
       {popupUserStatus && (
         <div className="popup-container">
-          {popupUser.map((user) => {
+          {popupUser.map((user: UserType) => {
             return (
               <div className="popup-content">
                 <span
-                  class="popup-story-close"
+                  className="popup-story-close"
                   onClick={() => {
                     setPopupUserStatus(false);
                     setPopupUser([]);
