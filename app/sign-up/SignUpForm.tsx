@@ -14,13 +14,13 @@ function SignUpForm() {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const firstnameInput = useRef();
-  const lastnameInput = useRef();
-  const cityInput = useRef();
-  const countryInput = useRef();
-  const emailInput = useRef();
-  const passwordInput = useRef();
-  const imgInput = useRef();
+  const firstnameInput:any = useRef();
+  const lastnameInput:any = useRef();
+  const cityInput:any = useRef();
+  const countryInput:any = useRef();
+  const emailInput:any = useRef();
+  const passwordInput:any = useRef();
+  const imgInput:any = useRef();
 
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -30,7 +30,7 @@ function SignUpForm() {
   const [password, setPassword] = useState("");
   const [img, setImg] = useState("");
 
-  function capitalizeFirstLetter(string) {
+  function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
@@ -45,7 +45,7 @@ function SignUpForm() {
     img,
   };
 
-  const userExist = (user) => {
+  const userExist = (user: string) => {
     for (const account of users) {
       if (user === account.email) {
         return false;
@@ -53,7 +53,7 @@ function SignUpForm() {
     }
   };
 
-  const addUser = (e) => {
+  const addUser:any = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     signUpCondition();
   };
@@ -93,7 +93,7 @@ function SignUpForm() {
       dispatch(addToUser(user));
       dispatch(addUserLogged(user));
       dispatch(changeActivity(true));
-      navigate("/user-list");
+      router.push("/user-list");
     }
   }
 

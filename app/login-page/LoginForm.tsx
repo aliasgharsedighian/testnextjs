@@ -16,8 +16,8 @@ function LoginForm() {
   const accountUser = useSelector(userAccountLogged);
   const dispatch = useDispatch();
   const router = useRouter();
-  const emailInput = useRef();
-  const passInput = useRef();
+  const emailInput: any = useRef<string>();
+  const passInput: any = useRef<string>();
 
   const [username, setUsername] = useState("");
   const [passWord, setPassWord] = useState("");
@@ -28,7 +28,7 @@ function LoginForm() {
     console.log(accountUser);
   }, [login]);
 
-  const userExist = (user, pass) => {
+  const userExist = (user:string, pass:string) => {
     for (const account of accounts) {
       if (account.email == user && account.password == pass) {
         dispatch(addUserLogged(account));
@@ -38,7 +38,7 @@ function LoginForm() {
     return false;
   };
 
-  const changeUserActivity = (val) => {
+  const changeUserActivity = (val: boolean) => {
     dispatch(changeActivity(val));
   };
 
@@ -77,7 +77,7 @@ function LoginForm() {
     }
   }
 
-  const onSubmit = (e) => {
+  const onSubmit: any = (e : React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     loginCondition();
   };
@@ -97,7 +97,7 @@ function LoginForm() {
       />
       <button
         className="disabled:bg-gray-600"
-        disabled={!username || !passWord || activity}
+        disabled={!username || !passWord }
         onClick={onSubmit}
       >
         Log in

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 
-function PageWrapper({ children }) {
+function PageWrapper({ children }:any) {
   return (
     <>
       <AnimatePresence>

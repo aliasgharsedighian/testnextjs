@@ -39,15 +39,15 @@ function Header() {
   const userAccount = useSelector(userAccountLogged);
 
   const items = useSelector(selectItems);
-  const total = useSelector(selectTotal);
+  const total = useSelector<number>(selectTotal);
 
   const [sidebar, setSidebar] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState<boolean>(false);
 
-  let menuRef = useRef(null);
+  let menuRef = useRef<any>(null);
 
   useEffect(() => {
-    let handler = (e: FormEvent<HTMLDivElement>) => {
+    let handler: any = (e: FormEvent<HTMLDivElement>) => {
       if (menuRef?.current && !menuRef.current.contains(e.target)) {
         setSidebar(false);
         setCartOpen(false);

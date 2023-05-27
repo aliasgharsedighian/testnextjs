@@ -7,7 +7,7 @@ const fetchProducts = async (): Promise<ProductsType[]> => {
   return products;
 };
 
-const Products = async () => {
+const Products:any = async () => {
   const products = await fetchProducts();
 
   return (

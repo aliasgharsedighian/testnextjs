@@ -3,7 +3,6 @@ import {
   UserIcon,
   BriefcaseIcon,
   EnvelopeIcon,
-  CodeBracketIcon,
   PhoneIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";

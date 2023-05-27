@@ -1,6 +1,5 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { CollectionsData } from "../../pages/api/collectionData";
-import { Carousel } from "react-responsive-carousel";
 import { Collections } from "../../typing";
 import PageWrapper from "../pageWrapper";
 
