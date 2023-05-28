@@ -26,6 +26,9 @@ function TestPage() {
         to child
       </Link>
       <Link href="/test/crud">Get , Post , Put, Delete in react</Link>
+      <Link href="/test/inputref">Input ref</Link>
+      <Link href="/test/usescrollhook">usescrollhook</Link>
+      <Link href="/test/reusable-input">Create Reusable input</Link>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { ReduxProviders } from "./GlobalRedux/provider";
 import ThemeProviders from "./ThemeProviders";
+import React from "react";
 
 export default function RootLayout({
   children,
