@@ -10,6 +10,7 @@ import {
   activity,
 } from "../GlobalRedux/Features/user/userSlice";
 import { useRouter } from "next/navigation";
+import Input from "../test/reusable-input/Input";
 
 function LoginForm() {
   const users = useSelector(addedUser);
@@ -28,7 +29,7 @@ function LoginForm() {
     console.log(accountUser);
   }, [login]);
 
-  const userExist = (user:string, pass:string) => {
+  const userExist = (user: string, pass: string) => {
     for (const account of accounts) {
       if (account.email == user && account.password == pass) {
         dispatch(addUserLogged(account));
@@ -58,7 +59,7 @@ function LoginForm() {
 
   function loginCondition() {
     if (username === "") {
-      emailInput.current.focus();
+      emailInput?.current.focus();
     } else if (passWord === "") {
       passInput.current.focus();
     } else if (passWord.length < 6) {
@@ -77,17 +78,27 @@ function LoginForm() {
     }
   }
 
-  const onSubmit: any = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const onSubmit: any = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     loginCondition();
   };
   return (
     <form onSubmit={onSubmit} className="form-login-page">
-      <input
+      {/* <input
         ref={emailInput}
         type="text"
         placeholder="Enter email"
         onChange={(e) => setUsername(e.target.value)}
+      /> */}
+      <Input
+        type="text"
+        label=""
+        labelType=""
+        className="form-login-page-input"
+        setValue={setUsername}
+        value={username}
+        placeholder="Enter Your Email"
+        inputRef={emailInput}
       />
       <input
         ref={passInput}
@@ -97,7 +108,7 @@ function LoginForm() {
       />
       <button
         className="disabled:bg-gray-600"
-        disabled={!username || !passWord }
+        disabled={!username || !passWord}
         onClick={onSubmit}
       >
         Log in

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
-import "./Input.css"; // Don't forget to create this file
+// import "./Input.css";
 
 interface PageProps {
   type: string;
@@ -10,6 +10,8 @@ interface PageProps {
   className: string;
   setValue: any;
   value: any;
+  placeholder?: string;
+  inputRef?: any;
 }
 
 const Input = ({
@@ -19,6 +21,8 @@ const Input = ({
   className,
   setValue,
   value,
+  placeholder,
+  inputRef,
   ...rest
 }: PageProps) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -68,6 +72,8 @@ const Input = ({
       <div className="input-field">
         <input
           {...rest}
+          placeholder={placeholder}
+          ref={inputRef}
           type={setTypeToInput()}
           onChange={customNumberFunc}
           value={customNumber ? setInputValue() : value}
