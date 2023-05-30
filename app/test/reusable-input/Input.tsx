@@ -8,14 +8,58 @@ interface PageProps {
   label: string;
   labelType: string;
   className: string;
+  setValue: any;
+  value: any;
 }
 
-const Input = ({ type, label, labelType, className, ...rest }: PageProps) => {
+const Input = ({
+  type,
+  label,
+  labelType,
+  className,
+  setValue,
+  value,
+  ...rest
+}: PageProps) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+
   const isPassword = type === "password";
+  const customNumber = type === "customNumber";
 
   const handleTogglePasswordVisibility = () => {
     setIsPasswordShown(!isPasswordShown);
+  };
+
+  const setTypeToInput: any = () => {
+    if (isPassword) {
+      if (isPasswordShown) {
+        return "text";
+      } else {
+        return "password";
+      }
+    }
+    if (customNumber) {
+      return "text";
+    } else {
+      return type;
+    }
+  };
+
+  const customNumberFunc = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!customNumber) {
+      setValue(e.target.value);
+    } else {
+      const regex = /^[0-9\b]+$/;
+      if (e.target.value === "" || regex.test(e.target.value)) {
+        setValue(e.target.value);
+      }
+    }
+  };
+
+  const setInputValue: any = () => {
+    if (customNumber) {
+      return value?.toLocaleString();
+    }
   };
 
   return (
@@ -24,7 +68,9 @@ const Input = ({ type, label, labelType, className, ...rest }: PageProps) => {
       <div className="input-field">
         <input
           {...rest}
-          type={isPassword ? (isPasswordShown ? "text" : "password") : type}
+          type={setTypeToInput()}
+          onChange={customNumberFunc}
+          value={customNumber ? setInputValue() : value}
         />
         {isPassword && (
           <div className="icon" onClick={handleTogglePasswordVisibility}>
