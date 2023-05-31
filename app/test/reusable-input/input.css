@@ -1,9 +1,9 @@
-.input-container {
+/* .input-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-inline: 10px;
-}
+} */
 .input-container.my-input {
   /* write your custom input if you want */
 }
@@ -29,10 +29,32 @@
 .input-container .input-field input {
   position: relative;
   width: 100%;
-  padding: 7px 10px;
+  padding: 10px 10px;
   border-radius: 10px;
 }
 .input-container .icon {
   position: absolute;
   right: 10px;
+}
+.input-span-style {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(173, 173, 173);
+  padding: 5px;
+  border-radius: 7px;
+  gap: 5px;
+}
+.input-span-style.left {
+  left: 5px;
+}
+.input-span-style.right {
+  right: 5px;
+}
+.input-span-style img {
+  width: 20px;
+}
+.input-span-style span {
+  font-size: 14px;
 }

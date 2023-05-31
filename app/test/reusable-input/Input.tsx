@@ -1,18 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
-// import "./Input.css";
-
-interface PageProps {
-  type: string;
-  label: string;
-  labelType: string;
-  className: string;
-  setValue: any;
-  value: any;
-  placeholder?: string;
-  inputRef?: any;
-}
+import { ReusableInputType } from "../../../typing";
 
 const Input = ({
   type,
@@ -23,8 +12,13 @@ const Input = ({
   value,
   placeholder,
   inputRef,
+  spanText,
+  spanImgSrc,
+  spanImgAlt,
+  direction,
+  spanDir,
   ...rest
-}: PageProps) => {
+}: ReusableInputType) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const isPassword = type === "password";
@@ -77,7 +71,20 @@ const Input = ({
           type={setTypeToInput()}
           onChange={customNumberFunc}
           value={customNumber ? setInputValue() : value}
+          dir={direction}
         />
+        {spanImgSrc && (
+          <div
+            className={`${
+              spanDir === "left"
+                ? "input-span-style left"
+                : "input-span-style right"
+            }`}
+          >
+            <img src={spanImgSrc} alt={spanImgAlt} />
+            <span>{spanText}</span>
+          </div>
+        )}
         {isPassword && (
           <div className="icon" onClick={handleTogglePasswordVisibility}>
             {isPasswordShown ? <FiEyeOff /> : <FiEye />}

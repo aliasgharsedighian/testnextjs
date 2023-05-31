@@ -2,7 +2,9 @@
 
 import React, { useState } from "react";
 import Input from "./Input";
-// import "./input.css";
+import "./input.css";
+import "./button.css";
+import Button from "./Button";
 
 function ReusableInputPage() {
   const [inputValue, setInputValue] = useState("");
@@ -10,16 +12,21 @@ function ReusableInputPage() {
   return (
     <div className="flex flex-col w-[400px] mx-auto my-3 gap-5">
       <Input
-        type="text"
+        type="customNumber"
         label="Enter Your name"
         labelType="top"
         className="my-input"
         setValue={setInputValue2}
         value={inputValue2}
+        spanText="تتر"
+        spanImgSrc="/images/tetherImg.PNG"
+        spanImgAlt="تتر"
+        spanDir="left"
+        direction="rtl"
       />
       {inputValue2}
       <Input
-        type="customNumber"
+        type="password"
         label="Password"
         labelType="top"
         className="my-input"
@@ -27,6 +34,24 @@ function ReusableInputPage() {
         value={inputValue}
       />
       {inputValue}
+      <Button
+        buttonClass="red"
+        buttonText="فروش"
+        buttonType="button"
+        onClickButton={() => console.log("button submitted")}
+      />
+      <Button
+        buttonClass="green"
+        buttonText="خرید"
+        buttonType="button"
+        onClickButton={() => console.log("button submitted2")}
+      />
+      <Button
+        buttonClass="blue"
+        buttonText="نمودار"
+        buttonType="button"
+        onClickButton={() => console.log("button submitted3")}
+      />
       <span
         data-from="0"
         data-to="4000"

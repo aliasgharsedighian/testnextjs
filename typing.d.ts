@@ -41,3 +41,19 @@ export interface Collections {
   tag: string;
   view: string;
 }
+
+export interface ReusableInputType {
+  type: string;
+  label: string;
+  labelType: string;
+  className: string;
+  setValue: any;
+  value: any;
+  placeholder?: string;
+  inputRef?: any;
+  spanText?: string;
+  spanImgSrc?: string;
+  spanImgAlt?: string;
+  spanDir?: string;
+  direction?: string;
+}
