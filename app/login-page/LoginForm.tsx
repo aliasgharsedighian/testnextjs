@@ -8,7 +8,7 @@ import {
   addUserLogged,
   userAccountLogged,
   activity,
-} from "../GlobalRedux/Features/user/userSlice";
+} from "../../redux/Features/user/userSlice";
 import { useRouter } from "next/navigation";
 
 function LoginForm() {
@@ -28,7 +28,7 @@ function LoginForm() {
     console.log(accountUser);
   }, [login]);
 
-  const userExist = (user:string, pass:string) => {
+  const userExist = (user: string, pass: string) => {
     for (const account of accounts) {
       if (account.email == user && account.password == pass) {
         dispatch(addUserLogged(account));
@@ -77,7 +77,7 @@ function LoginForm() {
     }
   }
 
-  const onSubmit: any = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const onSubmit: any = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     loginCondition();
   };
@@ -97,7 +97,7 @@ function LoginForm() {
       />
       <button
         className="disabled:bg-gray-600"
-        disabled={!username || !passWord }
+        disabled={!username || !passWord}
         onClick={onSubmit}
       >
         Log in

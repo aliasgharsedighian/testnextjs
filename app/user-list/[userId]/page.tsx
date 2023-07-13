@@ -2,7 +2,7 @@
 
 import { useSelector } from "react-redux";
 import { UserType } from "../../../typing";
-import { addedUser } from "../../GlobalRedux/Features/user/userSlice";
+import { addedUser } from "../../../redux/Features/user/userSlice";
 
 type PageProps = {
   params: {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
-import "./Input.css"; // Don't forget to create this file
+import "../../../styles/test/input.css"; // Don't forget to create this file
 
 interface PageProps {
   type: string;

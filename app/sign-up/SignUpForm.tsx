@@ -5,7 +5,7 @@ import {
   changeActivity,
   addUserLogged,
   addedUser,
-} from "../GlobalRedux/Features/user/userSlice";
+} from "../../redux/Features/user/userSlice";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -14,13 +14,13 @@ function SignUpForm() {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const firstnameInput:any = useRef();
-  const lastnameInput:any = useRef();
-  const cityInput:any = useRef();
-  const countryInput:any = useRef();
-  const emailInput:any = useRef();
-  const passwordInput:any = useRef();
-  const imgInput:any = useRef();
+  const firstnameInput: any = useRef();
+  const lastnameInput: any = useRef();
+  const cityInput: any = useRef();
+  const countryInput: any = useRef();
+  const emailInput: any = useRef();
+  const passwordInput: any = useRef();
+  const imgInput: any = useRef();
 
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -53,7 +53,7 @@ function SignUpForm() {
     }
   };
 
-  const addUser:any = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const addUser: any = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     signUpCondition();
   };

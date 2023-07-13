@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./Input";
-import "./input.css";
+import "../../../styles/test/input.css";
 
 function ReusableInputPage() {
   return (

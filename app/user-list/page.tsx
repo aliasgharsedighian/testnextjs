@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { UserPlusIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
-import { addedUser } from "../GlobalRedux/Features/user/userSlice";
+import { addedUser } from "../../redux/Features/user/userSlice";
 import { useState } from "react";
 import { userCategories } from "../../constants";
 import { usePathname } from "next/navigation";

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
-import { addToBasket } from "../GlobalRedux/Features/basket/basketSlice";
+import { addToBasket } from "../../redux/Features/basket/basketSlice";
 import Link from "next/link";
 import { motion } from "framer-motion";
 

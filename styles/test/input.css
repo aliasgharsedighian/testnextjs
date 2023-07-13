@@ -4,9 +4,6 @@
   gap: 10px;
   margin-inline: 10px;
 }
-.input-container.my-input {
-  /* write your custom input if you want */
-}
 .input-container.top {
   flex-direction: column;
 }

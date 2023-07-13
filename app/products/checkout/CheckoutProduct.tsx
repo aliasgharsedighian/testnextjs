@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   addToBasket,
   removeFromBasket,
-} from "../../GlobalRedux/Features/basket/basketSlice";
+} from "../../../redux/Features/basket/basketSlice";
 
 type Props = {
   id: number;

@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   activity,
   userAccountLogged,
-} from "../../GlobalRedux/Features/user/userSlice";
+} from "../../../redux/Features/user/userSlice";
 import PageWrapper from "../../pageWrapper";
 
 type PageProps = {

@@ -6,8 +6,8 @@ import CheckoutProduct from "./CheckoutProduct";
 import {
   selectItems,
   selectTotal,
-} from "../../GlobalRedux/Features/basket/basketSlice";
-import { activity } from "../../GlobalRedux/Features/user/userSlice";
+} from "../../../redux/Features/basket/basketSlice";
+import { activity } from "../../../redux/Features/user/userSlice";
 
 function CheckoutPage() {
   const items = useSelector(selectItems);

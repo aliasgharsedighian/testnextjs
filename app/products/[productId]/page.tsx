@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import React from "react";
 import { ProductsType } from "../../../typing";
 
@@ -13,8 +12,6 @@ const fetchProduct = async (productId: number) => {
   const product = await res.json();
   if (res.status === 200) {
     return product;
-  } else {
-    return notFound;
   }
 };
 
