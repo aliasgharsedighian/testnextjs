@@ -38,6 +38,7 @@
   font-weight: bold;
   font-size: 12px;
   border: 1px solid rgba(23, 22, 69, 0.6);
+  width: 100%;
 }
 .form-login-page button {
   background-color: #171645;

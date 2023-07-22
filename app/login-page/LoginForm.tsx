@@ -10,6 +10,7 @@ import {
   activity,
 } from "../../redux/Features/user/userSlice";
 import { useRouter } from "next/navigation";
+import Input from "../test/reusable-input/Input";
 
 function LoginForm() {
   const users = useSelector(addedUser);
@@ -58,7 +59,7 @@ function LoginForm() {
 
   function loginCondition() {
     if (username === "") {
-      emailInput.current.focus();
+      emailInput?.current.focus();
     } else if (passWord === "") {
       passInput.current.focus();
     } else if (passWord.length < 6) {
@@ -83,11 +84,21 @@ function LoginForm() {
   };
   return (
     <form onSubmit={onSubmit} className="form-login-page">
-      <input
+      {/* <input
         ref={emailInput}
         type="text"
         placeholder="Enter email"
         onChange={(e) => setUsername(e.target.value)}
+      /> */}
+      <Input
+        type="text"
+        label=""
+        labelType=""
+        className="form-login-page-input"
+        setValue={setUsername}
+        value={username}
+        placeholder="Enter Your Email"
+        inputRef={emailInput}
       />
       <input
         ref={passInput}
