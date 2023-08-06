@@ -29,6 +29,7 @@ function TestPage() {
       <Link href="/test/inputref">Input ref</Link>
       <Link href="/test/usescrollhook">usescrollhook</Link>
       <Link href="/test/reusable-input">Create Reusable input</Link>
+      <Link href="/test/listbox-select">Listbox Select</Link>
     </div>
   );
 }
