@@ -2,13 +2,9 @@
 
 import React, { useState } from "react";
 import Input from "./Input";
-<<<<<<< HEAD
 import "../../../styles/test/input.css";
-=======
-import "./input.css";
 import "./button.css";
 import Button from "./Button";
->>>>>>> 1435cba86e6e66cd3e4b49cc64a56c7391153c96
 
 function ReusableInputPage() {
   const [inputValue, setInputValue] = useState("");
