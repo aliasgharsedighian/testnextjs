@@ -1,10 +1,10 @@
-import React, { memo } from "react";
+import React from "react";
 import ProductsForm from "./ProductsForm";
 import Products from "./Products";
 import PageWrapper from "../pageWrapper";
 import ProductsCategory from "./ProductsCategory";
 
-const ProductsPage = memo(() => {
+const ProductsPage = () => {
   // const filterResults = (categoryItem: string) => {
   //   const result = products.filter((curData) => {
   //     return curData.category === categoryItem;
@@ -25,6 +25,6 @@ const ProductsPage = memo(() => {
       </PageWrapper>
     </>
   );
-});
+};
 
 export default ProductsPage;
