@@ -29,6 +29,7 @@ export interface ProductsType {
   image: string;
   rating: number;
   hasPrime?: any;
+  quantity: number;
 }
 
 export interface Collections {

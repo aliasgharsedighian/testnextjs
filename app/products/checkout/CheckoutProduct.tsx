@@ -16,6 +16,7 @@ type Props = {
   category: string;
   image: string;
   hasPrime: any;
+  quantity: number;
 };
 
 function CheckoutProduct({
@@ -27,6 +28,7 @@ function CheckoutProduct({
   category,
   image,
   hasPrime,
+  quantity,
 }: Props) {
   const dispatch = useDispatch();
 
@@ -40,6 +42,7 @@ function CheckoutProduct({
       category,
       image,
       hasPrime,
+      quantity,
     };
     // push items into redux
     dispatch(addToBasket(product));
@@ -65,6 +68,7 @@ function CheckoutProduct({
         </div>
         <p className="text-xs my-2 line-clamp-3">{description}</p>
         <p>${price}</p>
+        <span>{quantity}</span>
         {hasPrime && (
           <div className="flex items-center space-x-2">
             <img

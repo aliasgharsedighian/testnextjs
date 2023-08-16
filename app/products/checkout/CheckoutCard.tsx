@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import {
   addToBasket,
   removeFromBasket,
+  incrementQuantity,
+  decrementQuantity,
 } from "../../../redux/Features/basket/basketSlice";
 
 type Props = {
@@ -14,6 +16,7 @@ type Props = {
   category: string;
   image: string;
   hasPrime: any;
+  quantity: number;
 };
 
 function CheckoutCard({
@@ -25,6 +28,7 @@ function CheckoutCard({
   category,
   image,
   hasPrime,
+  quantity,
 }: Props) {
   const dispatch = useDispatch();
 
@@ -38,6 +42,7 @@ function CheckoutCard({
       category,
       image,
       hasPrime,
+      quantity,
     };
     // push items into redux
     dispatch(addToBasket(product));
@@ -54,11 +59,12 @@ function CheckoutCard({
         <div className="checkout-card-content-detail dark:text-gray-900">
           <p>{title}</p>
           <span>${price}</span>
+          <span>{quantity}</span>
         </div>
       </div>
       <div className="checkout-card-content-right">
-        <button onClick={addItemToBasket}>+</button>
-        <button onClick={removeItemFromBasket}>-</button>
+        <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
+        <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
       </div>
     </div>
   );
