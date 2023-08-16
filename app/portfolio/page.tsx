@@ -146,13 +146,26 @@ function PortfolioPage() {
             <div className="timeline">
               <div className="timeline-items">
                 <div className="timeline-item">
-                  <div className="timeline-date">2023 - now</div>
+                  <div className="timeline-date">May 2023 - now</div>
+                  <div className="timeline-content">
+                    <h3>Rahyab payam gostaran</h3>
+                    <p>Created crypto site and shopping site</p>
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">March 2023 -May 2023</div>
                   <div className="timeline-content">
                     <h3>Kasbotech</h3>
                     <p>
                       Created two responsive Exchange site for this Company and
                       coding one App
                     </p>
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">2020 -2023</div>
+                  <div className="timeline-content">
+                    <h3>Freelancer</h3>
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -171,11 +184,7 @@ function PortfolioPage() {
           {/* <!--=============== CONTACT ===============--> */}
           <section className="content-card contact" id="contact">
             <h1 className="font-bold text-[20px]">Contact</h1>
-            <form
-              className="form"
-              id="form"
-              action="https://www.freecodecamp.com/email-submit"
-            >
+            <form className="form" id="form" action="">
               <div className="input-box">
                 <input
                   type="text"
