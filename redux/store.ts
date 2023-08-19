@@ -3,6 +3,12 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import SignUpReducer from "./Features/user/userSlice";
 import basketReducer from "./Features/basket/basketSlice";
+import amazonReducer from "./Features/basket/amazonBasketSlice";
+import ebayReducer from "./Features/basket/ebayBasketSlice";
+import emirateReducer from "./Features/basket/emirateBasketSlice";
+import turkeyReducer from "./Features/basket/turkeyBasketSlice";
+import chinaReducer from "./Features/basket/chinaBasketSlice";
+
 import {
   persistStore,
   persistReducer,
@@ -25,6 +31,11 @@ const persistConfig = {
 const reducer = combineReducers({
   SignUpPage: SignUpReducer,
   basket: basketReducer,
+  amazonBasket: amazonReducer,
+  ebayBasket: ebayReducer,
+  emirateBasket: emirateReducer,
+  turkeyBasket: turkeyReducer,
+  chinaBasket: chinaReducer,
 });
 
 const customizedMiddleware = getDefaultMiddleware({
