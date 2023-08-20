@@ -47,35 +47,6 @@ function ShowMorePage() {
   return (
     <div className="px-20">
       <ShowMoreLessButton />
-
-      <div className="flex flex-col gap-5">
-        {data.map((item) => (
-          <div
-            key={item.id}
-            className="border border-gray-400 show-more-page-container p-5 rounded-md"
-          >
-            <div
-              className="flex gap-2"
-              {...getToggleProps({
-                onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-              })}
-            >
-              <span className="border-l border-gray-400 px-2">
-                {item.number}
-              </span>
-              <p>{item.title}</p>
-            </div>
-            {/* when expand show this div */}
-            <div
-              {...getCollapseProps()}
-              className="flex flex-col gap-4 mt-4 border-t pt-4 border-gray-300"
-            >
-              <p>{item.desc}</p>
-              <Link href={item.href}>مشاهده توضیحات تکمیلی</Link>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
